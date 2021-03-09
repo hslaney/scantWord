@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /*
 The ScantArray class represents a 2D array with few non-zero
@@ -136,6 +135,32 @@ public class ScantArray {
         System.out.println(sa1);
 
         /******* please add one more test of your own *******/
+
+        ScantArray sa2 = new ScantArray(3,6);
+
+        System.out.println("rows "+ sa2.getNumRows());
+        System.out.println("columns "+ sa2.getNumColumns());
+        System.out.println("value at (2,2) is " + sa2.getValueAt(2,2));
+
+        sa2.addEntry(2,0,3);
+        sa2.addEntry(1,5,4);
+        sa2.addEntry(1,1,7);
+        sa2.addEntry(2,3,5);
+
+        sa2.addEntry(0,3,-8);
+        sa2.addEntry(0,5,1);
+        System.out.println(sa2);
+
+        sa2.removeColumn(4);
+        sa2.removeColumn(2);
+        System.out.println();
+        System.out.println(sa2);
+
+        System.out.println("rows "+ sa2.getNumRows());
+        System.out.println("columns "+ sa2.getNumColumns());
+        System.out.println("value at (2,2) is " + sa2.getValueAt(2,2));
+
+
     }
 }
 

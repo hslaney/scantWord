@@ -81,7 +81,7 @@ public class WordDuoList {
         int matches = 0;
         for(int i = 0; i<allDuos.size(); i++){
             WordDuo w1 = allDuos.get(i);
-            if(w1.first.equals(w1.second)){
+            if(w1.getFirst().equals(w1.getSecond())){
                 matches++;
             }
         }
@@ -102,14 +102,11 @@ public class WordDuoList {
         /* part c */
         for(int i = 0; i<allDuos.size(); i++){
             WordDuo w1 = allDuos.get(i);
-            if(w1.first.equals(w1.second)){
+            if(w1.getFirst().equals(w1.getSecond())){
                 allDuos.remove(i);
                 allDuos.add(0,w1);
             }
         }
-
-
-
     }
 
     public static void main(String[] args) {
@@ -133,6 +130,7 @@ public class WordDuoList {
         System.out.println(wdl3.numMatches());
         wdl3.moveMatchesToTop();
         System.out.println(wdl3);
+
 
     }
 }
