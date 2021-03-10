@@ -95,12 +95,13 @@ public class ScantArray {
         int check = 0;
         for(int r = 0; r <getNumRows(); r++){
             for(int c = 0; c<getNumColumns();c++){
-                for(int i = 0; i<entries.size(); i++){
+                for(int i = 0;check==0 && i<entries.size(); i++){
                     ScantArrayEntry a = entries.get(i);
                     if(a.getRow()==r && a.getColumn()==c){
                         s+=a.getValue();
                         check++;
                     }
+
                 }
                 if(check==0){
                     s+=("0");
@@ -146,9 +147,11 @@ public class ScantArray {
         sa2.addEntry(1,5,4);
         sa2.addEntry(1,1,7);
         sa2.addEntry(2,3,5);
-
+        sa2.addEntry(0,0,4);
         sa2.addEntry(0,3,-8);
         sa2.addEntry(0,5,1);
+        sa2.addEntry(sa2.getNumRows()-1, sa2.getNumColumns()-1, 8);
+
         System.out.println(sa2);
 
         sa2.removeColumn(4);
@@ -183,14 +186,14 @@ columns 5
 rows 3
 columns 6
 value at (2,2) is 0
-0 0 0 -8 0 1
+4 0 0 -8 0 1
 0 7 0 0 0 4
-3 0 0 5 0 0
+3 0 0 5 0 8
 
 
-0 0 -8 1
+4 0 -8 1
 0 7 0 4
-3 0 5 0
+3 0 5 8
 
 rows 3
 columns 4
